@@ -1,0 +1,18 @@
+{
+  "name": "FwzSound",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean",
+    "newclear": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean && npm i",
+    "tron": "node_modules/.bin/reactotron"
+  },
+  "dependencies": {
+    "moment": "^2.14.1",
+    "react": "15.3.1",
+    "react-native": "0.32.1",
+    "react-native-audio-streaming":"https://github.com/hkhungit/react-native-audio-streaming.git#update-react-native",
+    "react-native-audio-toolkit":"https://github.com/hkhungit/react-native-audio-toolkit.git"
+  }
+}
