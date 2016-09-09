@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		004A310E0D80485FB9481901 /* libReactNativeAudioToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3FBE4986AC4D278579F484 /* libReactNativeAudioToolkit.a */; };
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
@@ -26,6 +25,15 @@
 		388677181D826B52004F5821 /* libStreamingKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 388677171D826AD1004F5821 /* libStreamingKit.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		C2CAD4F4C7C04F7BB9BA72B8 /* libReactNativeAudioStreaming.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F4E7006FE045C58CC5A66D /* libReactNativeAudioStreaming.a */; };
+		5BEC8BD499154CA7AAA7FF3D /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1429A463444423B7513649 /* libRNVectorIcons.a */; };
+		22B598DEDE9E49B68C4BB90A /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B99EB839014C4206A1EE2C11 /* Entypo.ttf */; };
+		6F4298F512B3430596899C4A /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB45690D94A3402EB70BE3DE /* EvilIcons.ttf */; };
+		EFB975625AA645C8826700F7 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38289C039293472DBA8F2026 /* FontAwesome.ttf */; };
+		AE226FF4D89044E291F27D4B /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAD3971E8C4F4244ABF9EB2D /* Foundation.ttf */; };
+		47F9236E55CA4251B6569483 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A117789576C4ADE8B98A144 /* Ionicons.ttf */; };
+		EF779C0C58F346079D15C3CA /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 494E5B4B388D4E519E166174 /* MaterialIcons.ttf */; };
+		D2A819F5782A499B97E21A5F /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 703F05A39F5C4718BC500E23 /* Octicons.ttf */; };
+		7F139B0FEA4046D4843FA9FD /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F55473234D8641BF9471403B /* Zocial.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +171,16 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		A87D765C414E46398EEF35FF /* ReactNativeAudioToolkit.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeAudioToolkit.xcodeproj; path = "../node_modules/react-native-audio-toolkit/ios/ReactNativeAudioToolkit/ReactNativeAudioToolkit.xcodeproj"; sourceTree = "<group>"; };
+		80FBE304BE07465EB3BFEBAE /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; name = "RNVectorIcons.xcodeproj"; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		4F1429A463444423B7513649 /* libRNVectorIcons.a */ = {isa = PBXFileReference; name = "libRNVectorIcons.a"; path = "libRNVectorIcons.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		B99EB839014C4206A1EE2C11 /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AB45690D94A3402EB70BE3DE /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		38289C039293472DBA8F2026 /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DAD3971E8C4F4244ABF9EB2D /* Foundation.ttf */ = {isa = PBXFileReference; name = "Foundation.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1A117789576C4ADE8B98A144 /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		494E5B4B388D4E519E166174 /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		703F05A39F5C4718BC500E23 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F55473234D8641BF9471403B /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +209,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				C2CAD4F4C7C04F7BB9BA72B8 /* libReactNativeAudioStreaming.a in Frameworks */,
 				004A310E0D80485FB9481901 /* libReactNativeAudioToolkit.a in Frameworks */,
+				5BEC8BD499154CA7AAA7FF3D /* libRNVectorIcons.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +360,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				219A5569CE484237A107AFEE /* ReactNativeAudioStreaming.xcodeproj */,
 				A87D765C414E46398EEF35FF /* ReactNativeAudioToolkit.xcodeproj */,
+				80FBE304BE07465EB3BFEBAE /* RNVectorIcons.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -360,6 +380,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* FwzSoundTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				D43FF390C733453C89C9CA9A /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -372,6 +393,22 @@
 				00E356EE1AD99517003FC87E /* FwzSoundTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D43FF390C733453C89C9CA9A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B99EB839014C4206A1EE2C11 /* Entypo.ttf */,
+				AB45690D94A3402EB70BE3DE /* EvilIcons.ttf */,
+				38289C039293472DBA8F2026 /* FontAwesome.ttf */,
+				DAD3971E8C4F4244ABF9EB2D /* Foundation.ttf */,
+				1A117789576C4ADE8B98A144 /* Ionicons.ttf */,
+				494E5B4B388D4E519E166174 /* MaterialIcons.ttf */,
+				703F05A39F5C4718BC500E23 /* Octicons.ttf */,
+				F55473234D8641BF9471403B /* Zocial.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -616,6 +653,14 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				22B598DEDE9E49B68C4BB90A /* Entypo.ttf in Resources */,
+				6F4298F512B3430596899C4A /* EvilIcons.ttf in Resources */,
+				EFB975625AA645C8826700F7 /* FontAwesome.ttf in Resources */,
+				AE226FF4D89044E291F27D4B /* Foundation.ttf in Resources */,
+				47F9236E55CA4251B6569483 /* Ionicons.ttf in Resources */,
+				EF779C0C58F346079D15C3CA /* MaterialIcons.ttf in Resources */,
+				D2A819F5782A499B97E21A5F /* Octicons.ttf in Resources */,
+				7F139B0FEA4046D4843FA9FD /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +739,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FwzSound.app/FwzSound";
@@ -710,6 +756,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -729,6 +776,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-audio-streaming/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-audio-toolkit/ios/ReactNativeAudioToolkit/**",
+					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 				);
 				INFOPLIST_FILE = FwzSound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -751,6 +799,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-audio-streaming/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-audio-toolkit/ios/ReactNativeAudioToolkit/**",
+					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 				);
 				INFOPLIST_FILE = FwzSound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -803,6 +852,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-audio-streaming/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-audio-toolkit/ios/ReactNativeAudioToolkit/**",
+					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -845,6 +895,7 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-audio-streaming/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-audio-toolkit/ios/ReactNativeAudioToolkit/**",
+					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
