@@ -12,7 +12,6 @@
     "moment": "^2.14.1",
     "react": "15.3.1",
     "react-native": "0.32.1",
-    "react-native-audio-streaming": "https://github.com/hkhungit/react-native-audio-streaming.git#update-react-native",
     "react-native-audio-toolkit": "https://github.com/hkhungit/react-native-audio-toolkit.git",
     "react-native-button": "https://github.com/hkhungit/react-native-button.git",
     "react-native-vector-icons": "^2.1.0"
