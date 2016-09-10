@@ -60,17 +60,15 @@ class AppMediaRecorder extends React.Component {
   }
 
   onStop(){
-    if (this.state.disableBtnStop)
-      return
-    
     this.player.stop(() => {
       this._reload();
     });
   }
 
   onSeek(percentage){
-    if (!this.player)
+    if (!this.player) {
       return;
+    }
 
     let position = percentage * this.player.duration;
 
@@ -87,11 +85,9 @@ class AppMediaRecorder extends React.Component {
   }
 
   onRecord(){
-    if (this.state.disableBtnRecord)
-      return
-
-    if (this.player)
+    if (this.player) {
       this.player.destroy();
+    }
 
     this.recorder.toggleRecord((err, stopped) => {
       if (err) {
@@ -99,12 +95,9 @@ class AppMediaRecorder extends React.Component {
           error: err.message
         });
       }
-
-      this.setState({isRecord: true})
       if (stopped) {
         this.initPlayer();
         this.initRecorder();
-        this.setState({isRecord: false})
       }
 
       this._reload();
@@ -116,9 +109,6 @@ class AppMediaRecorder extends React.Component {
   }
 
   onPlayback(){
-    if (this.state.disableBtnPlay)
-      return
-
     this.player.playPause((err, playing) => {
       if (err) {
         this.setState({
@@ -140,13 +130,22 @@ class AppMediaRecorder extends React.Component {
   }
 
   initPlayer(){
-    if (this.player)
-      this.player.destroy()
+    if (this.player) {
+      this.player.destroy();
+    }
 
-    this.player = new Player(filename, {autoDestroy: false}).prepare((error)=>{
-      this.setState({error})
+    this.player = new Player(filename, {
+      autoDestroy: false
+    }).prepare((err) => {
+      if (err) {
+        console.log('error at _reloadPlayer():');
+        console.log(err);
+      } else {
+        this.player.looping = this.state.looped;
+      }
+
       this._reload();
-    });
+    });  
 
     this.player.on("progress", (data)=>{
       let currentTime = data.currentTime;
@@ -155,25 +154,22 @@ class AppMediaRecorder extends React.Component {
 
     this.player.on("ended", ()=>{
       this._reload();
+      this.setState({progress: 0, position: 0});
     })
 
     this._reload();
   }
 
   initRecorder(){
-    if (this.recorder)
+    if (this.recorder) {
       this.recorder.destroy();
+    }
 
     this.recorder = new Recorder(filename, {
       bitrate: 256000,
       channels: 2,
       sampleRate: 44100,
       quality: 'max'
-    }).prepare((error, res)=>{
-      if (error)
-        return this.setState(error)
-      const { filepath }  = res
-      this.setState({filepath})
     });
 
     this.recorder.on("progress", (data)=>{
@@ -184,7 +180,9 @@ class AppMediaRecorder extends React.Component {
     this._reload();
   }
 
-  componentWillMount() {
+  componentWillMount() {    
+    this.player = null;
+    this.recorder = null;
     this.initPlayer();
     this.initRecorder();
   }
@@ -323,6 +321,7 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
+    backgroundColor: 'gray'
   },
 
   isRecord: {

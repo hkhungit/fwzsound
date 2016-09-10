@@ -7,7 +7,7 @@ class FwzSound extends Component {
     return (
       <Navigator
         ref="navigator"
-        initialRoute={{name: 'player'}}
+        initialRoute={{name: 'home'}}
         renderScene={Router.renderScene}
       />
     );
