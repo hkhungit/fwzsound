@@ -279,8 +279,11 @@ var styles = StyleSheet.create({
   },
 
   controll: {
+    marginLeft: -20,
     flexWrap: 'wrap',
+    alignItems: 'center',
     flexDirection: 'row',
+    justifyContent: 'center',
   },
 
   sliderPlayer: {
