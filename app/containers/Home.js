@@ -8,8 +8,19 @@ import {
 } from 'react-native';
 import { navigate } from '../navigators'
 import Button       from 'react-native-button'
-//f3b190ea31e81a860f53326e2f8a92da  
+import Storage      from 'react-native-storage';
+
 class Home extends Component {
+  componentDidMount() {
+    cache = new Storage({defaultExpires: 1000 * 3600 * 24 * 1000})
+    let routes = this.props.navigator.getCurrentRoutes();
+    let currentId = routes.length;
+    cache.save({
+      key: 'routes',
+      rawData: {routes, currentId}
+    });
+  }
+
   render() {
     const { ReactNativeAudioStreaming } = NativeModules;
     ReactNativeAudioStreaming.stop();

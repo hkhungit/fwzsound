@@ -19,6 +19,7 @@ import Moment     from 'moment';
 import Button     from 'react-native-button';
 import Icon       from 'react-native-vector-icons/FontAwesome';
 import Env        from '../../env'
+import Storage              from 'react-native-storage';
 
 const { CLIENT_ID } = Env
 const { ReactNativeAudioStreaming } = NativeModules;
@@ -170,6 +171,16 @@ class AppMediaPlayer extends React.Component {
       .catch((error) => {
         this.setState({error: error.message})
       });
+  }
+
+  componentDidMount() {
+    cache = new Storage({defaultExpires: 1000 * 3600 * 24 * 1000})
+    let routes = this.props.navigator.getCurrentRoutes();
+    let currentId = routes.length;
+    cache.save({
+      key: 'routes',
+      rawData: {routes, currentId}
+    });
   }
 
   fetchTrack(tracks){

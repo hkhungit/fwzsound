@@ -17,6 +17,7 @@ import {
   Recorder,
   MediaStates
 } from 'react-native-audio-toolkit';
+import Storage              from 'react-native-storage';
 
 let options = {
   title: "Preparing.....",
@@ -184,6 +185,16 @@ class AppMediaRecorder extends React.Component {
     this.recorder = null;
     this.initPlayer();
     this.initRecorder();
+  }
+
+  componentDidMount() {
+    cache = new Storage({defaultExpires: 1000 * 3600 * 24 * 1000})
+    let routes = this.props.navigator.getCurrentRoutes();
+    let currentId = routes.length;
+    cache.save({
+      key: 'routes',
+      rawData: {routes, currentId}
+    });
   }
 
   _renderTimePlay(record = true){
