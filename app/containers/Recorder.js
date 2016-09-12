@@ -38,8 +38,6 @@ class AppMediaRecorder extends React.Component {
       disableBtnRecord: false,
       disableBtnStop: false,
       disableBtnPlay: false,
-      progress: 0,
-      position: 0,
       error: null,
       filepath: null,
       ...options
@@ -63,6 +61,7 @@ class AppMediaRecorder extends React.Component {
     this.player.stop(() => {
       this._reload();
     });
+    this.setState({position:0, progress: 0})
   }
 
   onSeek(percentage){
@@ -187,8 +186,14 @@ class AppMediaRecorder extends React.Component {
     this.initRecorder();
   }
 
+  _renderTimePlay(record = true){
+    let position = Moment.utc(this.state.position + 999).format("mm:ss")
+    if (record)
+      return this.state.isRecord ? <Text style={{margin: 10}}> {position} </Text> : <Text style={{margin: 10}}> 00:00 </Text>
+    return this.state.isRecord ? <Text style={{margin: 10}}> 00:00 </Text> : <Text style={{margin: 10}}> {position} </Text>
+  }
+
   render() {
-    let position = Moment.utc(this.state.position).format("mm:ss")
     return (
       <View style={styles.container}>
         <Button style={styles.btnBack} onPress={() => this.props.navigator.pop()}>
@@ -207,11 +212,10 @@ class AppMediaRecorder extends React.Component {
             </View>
           </View>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <Button style={[styles.btnRecord, this.state.isRecord && styles.isRecord]} onPress={this.onRecord} >
+            <Button disabled={this.state.disableBtnRecord} style={[styles.btnRecord, this.state.isRecord && styles.isRecord]} onPress={this.onRecord} >
               <Icon name="microphone" size={100} color="#FFFFFF" />
             </Button>
-            {this.state.isRecord && <Text style={{margin: 10}}> {position} </Text>}
-            {!this.state.isRecord && <Text style={{margin: 10}}> 00:00 </Text>}
+            {this._renderTimePlay(true)}
           </View>
         </View>
         <View>
@@ -220,14 +224,15 @@ class AppMediaRecorder extends React.Component {
             <View style={styles.slider}>
               <Slider step={0.0001} onValueChange={this.onSeek} value={this.state.progress}/>
             </View>
-            {!this.state.isRecord && <Text style={{margin: 10}}> {position} </Text>}
-            {this.state.isRecord && <Text style={{margin: 10}}> 00:00 </Text>}
+            <View>
+            {this._renderTimePlay(false)}
+            </View>
           </View>
           <View style={styles.controll}>
-            <Button style={styles.button} onPress={this.onPlayback}>
+            <Button disabled={this.state.disableBtnPlay}  style={styles.button} onPress={this.onPlayback}>
               {this._renderPlayback()}
             </Button>
-            <Button style={styles.button} onPress={this.onStop} >
+            <Button disabled={this.state.disableBtnStop} style={styles.button} onPress={this.onStop} >
               <Icon name="stop-circle" size={20} color="#FFFFFF" />
             </Button>
             <Button style={[styles.button, this.state.looped && styles.active]} onPress={this.onRepeat}>
@@ -247,6 +252,11 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 20,
+    ...Platform.select({
+      android: {
+        paddingTop: 0,
+      }
+    }),
     position: 'relative',
     backgroundColor: '#F5FCFF',
   },
@@ -279,7 +289,6 @@ var styles = StyleSheet.create({
   },
 
   controll: {
-    marginLeft: -20,
     flexWrap: 'wrap',
     alignItems: 'center',
     flexDirection: 'row',
@@ -292,10 +301,10 @@ var styles = StyleSheet.create({
   },
 
   btnBack: {
-    top: 35,
     left: 5,
     zIndex: 9,
     padding: 12,
+    marginTop: 15,
     borderWidth: 0,
     borderRadius: 30,
     alignSelf: 'center',

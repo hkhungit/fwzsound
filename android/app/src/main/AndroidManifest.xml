@@ -27,7 +27,7 @@
       </activity>
       <meta-data
           android:name="io.fabric.ApiKey"
-          android:value="ae68f35c1d6e6dc70a7d0f0b6bf1ce034225d0ed"
+          android:value="770cb8d8e895952b4e8079e9d31bad0a62b521b3"
       />
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
